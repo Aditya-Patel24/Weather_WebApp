@@ -9,7 +9,7 @@ function App() {
   return (
   <>
     <div className='app-container'>
-    <h1>Weather app by Aditya Patel</h1>
+    <h1>Weather app made by Aditya Patel</h1>
     <Input />
     <Button onClick={weather.fetchData} value="Search"/>
     <Weather/>
