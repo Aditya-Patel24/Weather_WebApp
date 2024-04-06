@@ -10,7 +10,7 @@ function App() {
   <>
     <div className='app-container'>
     <h1 style={{fontFamily: "'Rubik Scribble', system-ui"}}>Weather app made by<span style={{color:"#61dafb"}}> Aditya Patel</span></h1>
-    <Input />
+    <Input onClick={weather.fetchData}/>
     <Button onClick={weather.fetchData} value="Search"/>
     <Weather/>
     </div>

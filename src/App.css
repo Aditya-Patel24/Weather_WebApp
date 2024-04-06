@@ -85,3 +85,11 @@
 img{
   margin: 0px;
 }
+.btn {
+  transition: transform 0.3s ease;
+}
+
+.btn:active {
+  transform: scale(0.95);
+  background-color: #d6d6d6;
+}

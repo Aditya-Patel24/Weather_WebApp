@@ -1,9 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { useWeather } from '../context/Weathercontext'
 const Button = (props) => {
-  
+  const weather = useWeather();
+  const check=()=>{
+    if(weather.searchCity !== ""){
+    return true;
+  }
+return false;}
+console.log(check);
   return (
     <div >
-      <button  className='btn' type="button" onClick={props.onClick}>{props.value}</button>
+    {check() ? ( <><button className='btn' type="button" onClick={props.onClick}>{props.value}</button> </>):(<> <button className='btn' type="button" onClick={props.onClick} disabled>{props.value}</button></>)}
     </div>
   )
 }

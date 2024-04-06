@@ -1,8 +1,19 @@
 import React, { useState } from "react";
 import { useWeather } from "../context/Weathercontext";
+import sunnyGif from "../assets/sunny.gif";
+import rainyGif from "../assets/rainy.gif";
 const Weather = () => {
   const weather = useWeather();
   console.log(weather);
+  const getWeatherGif = () => {
+    if (weather?.data?.current?.condition?.text.includes("Rain")) {
+      return rainyGif;
+    } else if (weather?.data?.current?.condition?.text.includes("Sunny")) {
+      return sunnyGif;
+    } else {
+      return "src\\assets\\weathergif.gif"; // default gif
+    }
+  };
   if (!weather.data) {
     return (
       <div className="out-weather">
@@ -16,7 +27,7 @@ const Weather = () => {
   return (
     <>
       <div className="out-weather">
-        <div className="weather-container">
+        <div className="weather-container"  style={{ backgroundImage: `url(${getWeatherGif()})` }}>
           <img src={weather?.data?.current?.condition?.icon} alt="icon" />
           <p>{weather?.data?.current?.condition?.text}</p>
           <h2>{weather?.data?.current?.temp_c}° C</h2>
@@ -24,7 +35,10 @@ const Weather = () => {
             {weather?.data?.location?.name}, {weather?.data?.location?.region},{" "}
             {weather?.data?.location?.country}
           </h5>
-          <h6>{weather?.data?.current?.last_updated}</h6>
+          <h5>{weather?.data?.current?.last_updated}</h5>
+          <p>Wind Speed: {weather?.data?.current?.wind_kph} kph</p>
+        <p>Humidity: {weather?.data?.current?.humidity}%</p>
+        <p>UV Index: {weather?.data?.current?.uv}</p>
         </div>
       </div>
     </>
