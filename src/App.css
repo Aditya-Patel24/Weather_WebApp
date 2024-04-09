@@ -42,7 +42,6 @@
 } */
 .app-container {
   max-width: 1280px;
-  margin: 100px auto;
   padding: 2rem;
   text-align: center;
 }

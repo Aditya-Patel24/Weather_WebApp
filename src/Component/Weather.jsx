@@ -24,6 +24,16 @@ const Weather = () => {
       </div>
     );
   }
+  if (!weather.data || weather.data.error) {
+    return (
+      <div className="out-weather">
+        <div className="weather-container">
+          <img src="src\\assets\\weathergif.gif" width="200px" alt="icon" />
+          <h2>Sorry, data is not available for the entered location.</h2>
+        </div>
+      </div>
+    );
+  }
   return (
     <>
       <div className="out-weather">
@@ -37,8 +47,8 @@ const Weather = () => {
           </h5>
           <h5>{weather?.data?.current?.last_updated}</h5>
           <p>Wind Speed: {weather?.data?.current?.wind_kph} kph</p>
-        <p>Humidity: {weather?.data?.current?.humidity}%</p>
-        <p>UV Index: {weather?.data?.current?.uv}</p>
+          <p>Humidity: {weather?.data?.current?.humidity}%</p>
+          <p>UV Index: {weather?.data?.current?.uv}</p>
         </div>
       </div>
     </>
