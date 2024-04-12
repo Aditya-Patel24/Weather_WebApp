@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useWeather } from "../context/Weathercontext";
 import sunnyGif from "../assets/sunny.gif";
 import rainyGif from "../assets/rainy.gif";
+import smokeGif from "../assets/Smoke.gif";
+import lightRainGif from "../assets/lightrain.gif";
 const Weather = () => {
   const weather = useWeather();
   console.log(weather);
@@ -10,6 +12,10 @@ const Weather = () => {
       return rainyGif;
     } else if (weather?.data?.current?.condition?.text.includes("Sunny")) {
       return sunnyGif;
+    } else if (weather?.data?.current?.condition?.text.includes("Smoke")) {
+      return smokeGif;
+    } else if (weather?.data?.current?.condition?.text.includes("Light rain")) {
+      return lightRainGif;
     } else {
       return "src\\assets\\weathergif.gif"; // default gif
     }
@@ -40,7 +46,7 @@ const Weather = () => {
         <div className="weather-container"  style={{ backgroundImage: `url(${getWeatherGif()})` }}>
           <img src={weather?.data?.current?.condition?.icon} alt="icon" />
           <p>{weather?.data?.current?.condition?.text}</p>
-          <h2>{weather?.data?.current?.temp_c}° C</h2>
+          <h2>{weather?.data?.current?.temp_c}° <span>C</span></h2>
           <h5>
             {weather?.data?.location?.name}, {weather?.data?.location?.region},{" "}
             {weather?.data?.location?.country}
