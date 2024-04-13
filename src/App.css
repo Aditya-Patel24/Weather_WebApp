@@ -49,7 +49,7 @@
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
-  background-color: #61dafb;
+  background-color: #4bd0f5;
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -97,6 +97,7 @@ h2 span {
 margin: 0px;
 }
 h2 {
-  color: #284805;
+  color: #02557b;
   font-size: 4em;
+    -webkit-text-stroke: 2px rgb(59, 82, 211);
 }
