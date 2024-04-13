@@ -9,7 +9,7 @@ function App() {
   return (
   <>
     <div className='app-container'>
-    <h1 style={{fontFamily: "'Rubik Scribble', system-ui"}}>Weather app made by<span style={{color:"#61dafb"}}> Aditya Patel</span></h1>
+    <h1 style={{fontFamily: " system-ui"}}>Weather app made by<span style={{color:"#61dafb",fontFamily: "'Rubik Scribble', system-ui"}}> Aditya Patel</span></h1>
     <Input onClick={weather.fetchData}/>
     <Button onClick={weather.fetchData} value="Search"/>
     <Weather/>
@@ -19,3 +19,4 @@ function App() {
 }
 
 export default App
+  
