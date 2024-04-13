@@ -8,12 +8,12 @@ export const useWeather = () => {
 
 export const WeatherProvider = (props) => {
   const [data, setData] = useState(null);
-  const [searchCity, setSearchCity] = useState(null);
+  const [searchCity, setSearchCity] = useState("");
   const fetchData = async () => {
     const response = await fetchWeather(searchCity);
     setData(response);
   };
   return (
-    <WeatherContext.Provider value={{ data, searchCity, setSearchCity, fetchData }}> {props.children}</WeatherContext.Provider>
+    <WeatherContext.Provider value={{ data, searchCity, setSearchCity, fetchData }}>{props.children}</WeatherContext.Provider>
   );
 };
