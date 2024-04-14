@@ -46,7 +46,7 @@ const Weather = () => {
         <div className="weather-container"  style={{ backgroundImage: `url(${getWeatherGif()})` }}>
           <img src={weather?.data?.current?.condition?.icon} alt="icon" />
           <p>{weather?.data?.current?.condition?.text}</p>
-          <h2>{weather?.data?.current?.temp_c}°<span>C</span></h2>
+          <h2 className="text-h">{weather?.data?.current?.temp_c}°<span>C</span></h2>
           <h5>
             {weather?.data?.location?.name}, {weather?.data?.location?.region},{" "}
             {weather?.data?.location?.country}
